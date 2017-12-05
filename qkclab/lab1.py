@@ -378,6 +378,15 @@ def saegemu():
     plt.show()
     return
 
+def ld(x):
+    """
+    "safe" workaround for np.log2(0)=0
+    H=-sum(p*ld(p)) with p=0 equals 0
+    """
+    for i in range (0,2):
+        if (x[i]>0.0):
+            x[i]=np.log2(x[i])
+    return x
 
 def entropy(p):
     """
@@ -392,7 +401,7 @@ def entropy(p):
     #     return 0  # entropy will be false, output 0
     if type(p) is dict:
         p=np.array(list(p.values()))
-    h = sum(-p * np.log2(p))
+    h = sum(-p * ld(p))
     return h
 
 """
