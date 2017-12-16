@@ -1,18 +1,17 @@
-qkcnotebooks
+## qkcnotebooks
 
---- virtuelle Umgebung erstellen (Python 3.6)
-virtualenv qkclab
---- virtuelle Umgebung aktivieren
-cd qkclab/scripts
-activate
---- virtuelle Umgebung für Jupyter Notebook einrichten
-pip install ipykernel
-python -m ipykernel install --user --name=qkclab
---- Jupyter öffnen
-jupyter notebook
+### virtuelle Umgebung erstellen (Python 3.6)
+* pip install virtualenv
+* virtualenv qkclab
+### virtuelle Umgebung aktivieren
+* cd qkclab/bin
+* Linux: source activate
+* Windows: activate
+### virtuelle Umgebung fÃ¼r Jupyter Notebook einrichten (Kernel mit der venv erstellen)
+* pip install ipykernel
+* python -m ipykernel install --user --name=qkclab
+* pip install matplotlib scipy numpy ipywidgets
+### Jupyter Ã¶ffnen und Kernel auswÃ¤hlen
+* jupyter notebook
+* Kernel > Change Kernel > qkclab
 
---- installing modules
---- activate
-
-pip install matplotlib
-pip install ipywidgets
